@@ -8,83 +8,191 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
       margin: 0;
+      padding-top: 20px; /* Afegit per evitar que el contingut toqui la part superior */
+      padding-bottom: 20px; /* Afegit per donar espai a sota */
       min-height: 100vh;
+      box-sizing: border-box; /* Perquè el padding no afegeixi a l'alçada total */
     }
     .container {
       max-width: 900px;
       margin: 40px auto;
-      background: #ffffffcc;
+      background: #ffffffcc; /* El 'cc' al final dona una lleugera transparència */
       padding: 30px 40px;
       border-radius: 20px;
       box-shadow: 0 8px 32px 0 rgba(160, 89, 230, 0.25);
     }
     h1, h2, h3 {
-      color: #a259e6;
+      color: #a259e6; /* Un lila maco */
       font-weight: 700;
       letter-spacing: 1px;
+    }
+    h1 {
+      text-align: center; /* Centrem el títol principal */
+      margin-bottom: 30px;
+    }
+    p, li { /* Aplicar estil base als paràgrafs i elements de llista */
+        line-height: 1.6;
+        color: #333;
     }
     a, .accent {
       color: #a259e6;
       text-decoration: none;
       font-weight: 600;
     }
+    a:hover {
+        text-decoration: underline; /* Subratllat al passar el cursor */
+    }
     .btn {
+      display: inline-block; /* Perquè respecti padding i margin correctament */
       background: #a259e6;
-      color: #fff;
+      color: #fff !important; /* Important per sobreescriure altres estils de 'a' si és un enllaç */
       border: none;
-      padding: 10px 24px;
+      padding: 12px 28px; /* Una mica més de padding */
       border-radius: 30px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none; /* Treure subratllat si el botó és un 'a' */
     }
     .btn:hover {
-      background: #90caf9;
-      color: #a259e6;
+      background: #8ec5fc; /* Blau del gradient */
+      color: #a259e6 !important;
+      transform: translateY(-2px); /* Petit efecte al passar el cursor */
     }
     .exercise {
-      background: #f3e8fd;
+      background: #f3e8fd; /* Un lila molt clar */
       border-left: 5px solid #a259e6;
       padding: 18px 24px;
       margin: 24px 0;
       border-radius: 10px;
     }
-    audio, iframe {
-      margin: 20px 0;
+    .explanation-box {
+        background: #e6f7ff; /* Un blau cel suau */
+        border-left: 5px solid #8ec5fc; /* Blau del gradient */
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+    }
+    .humor {
+        font-style: italic;
+        color: #555;
+        padding: 10px;
+        background-color: #fffacd; /* Groc llimona pàl·lid */
+        border-radius: 5px;
+        text-align: center;
+        margin: 15px 0;
+    }
+    audio, iframe, video { /* Estil unificat per a media */
+      margin: 20px auto; /* Centrar el media block */
       width: 100%;
       max-width: 600px;
       display: block;
       border-radius: 10px;
       box-shadow: 0 2px 8px #a259e644;
     }
+    /* Per a futurs exercicis de Drag & Drop (només estructura visual) */
+    .drag-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        background: #fafafa;
+        border: 1px dashed #ccc;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+    .draggable {
+        padding: 10px 15px;
+        background: #a259e6;
+        color: white;
+        border-radius: 5px;
+        cursor: grab;
+        margin: 5px;
+    }
+    .dropzone {
+        padding: 20px;
+        border: 2px dashed #8ec5fc;
+        background: #f0f8ff;
+        min-width: 100px;
+        min-height: 40px;
+        text-align: center;
+        border-radius: 5px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Benvinguts al curs d'anglès!</h1>
-    <h2>Present Simple</h2>
-<p>
-  El present simple s’utilitza per parlar d’accions habituals, rutines i fets generals.<br>
-  <strong>Recorda:</strong> En anglès, <em>I walk</em> vol dir “jo camino” de tant en tant, no ara mateix!
-</p>
+    <h1>🇬🇧 Curs d'Anglès per a Despistats Simpàtics (i Catalanoparlants!) 😉</h1>
+    
+    <p class="humor">No et preocupis, aprendre anglès pot ser divertit... o almenys intentarem que no ploris gaire! 😜</p>
 
-<div class="exercise">
-  <strong>Exemple:</strong><br>
-  <span class="accent">Jo camino</span> → <strong>I walk</strong> (de tant en tant, no ara mateix)
-</div>
+    <h2>Unitat 1: El Present Més Que Simple (Present Simple)</h2>
+    
+    <div class="explanation-box">
+      <p>El "Present Simple" és el pa de cada dia de l'anglès. L'utilitzem per parlar de coses que fem habitualment (rutines), veritats universals (l'aigua bull a 100ºC, tu ets genial), i horaris.</p>
+      <p><strong>Pista Clau:</strong> Quan un anglès et diu "I walk", no vol dir que estigui caminant ARA MATEIX mentre et parla (això seria una mica de pel·lícula de por). Vol dir que caminar és una cosa que fa... de tant en tant, o cada dia, o els dimarts quan hi ha mercat.</p>
+    </div>
 
-<h3>Escolta l’àudio:</h3>
-<audio controls>
-  <source src="audio/present-simple.mp3" type="audio/mpeg">
-  El teu navegador no suporta l'àudio.
-</audio><p>Aquí trobaràs lliçons, àudios i activitats interactives.</p>
+    <h3>Forma Afirmativa: Com construir frases</h3>
+    <p>És més fàcil que pelar una mandarina (de les bones, eh!): Subjecte + Verb (en la seva forma base).</p>
+    <p>Però, <strong>ALERTA MÀXIMA!</strong> Amb <em>he, she, it</em> (ell, ella, allò/això), el verb porta una <strong>-s</strong> al final. Sí, una simple "s" que pot canviar-ho tot. Els anglesos són així de detallistes.</p>
+
+    <div class="exercise">
+      <strong>Exemples per no perdre's:</strong>
+      <ul>
+        <li><span class="accent">Jo camino</span> cada matí → <strong>I walk</strong> every morning.</li>
+        <li><span class="accent">Tu parles</span> català → <strong>You speak</strong> Catalan.</li>
+        <li><span class="accent">Ell menja</span> pomes (i segurament en porta una -s!) → <strong>He eat<span style="color:red; font-weight:bold;">s</span></strong> apples.</li>
+        <li><span class="accent">Ella estudia</span> molt → <strong>She stud<span style="color:red; font-weight:bold;">ies</span></strong> a lot. (Compte amb els verbs acabats en -y!)</li>
+        <li><span class="accent">Nosaltres aprenem</span> anglès → <strong>We learn</strong> English.</li>
+        <li><span class="accent">Ells viuen</span> a prop → <strong>They live</strong> nearby.</li>
+      </ul>
+    </div>
+
+    <h3>🗣️ Escolta la Pronunciació (i intenta no riure't de mi!)</h3>
+    <p>Aquí tens com sona el "Present Simple" en acció. Fixa't en la "-s" quan toca!</p>
+    <audio controls>
+      <source src="audio/present-simple-examples.mp3" type="audio/mpeg">
+      Ups! Sembla que el teu navegador és una mica tímid i no vol reproduir l'àudio. Prova amb un altre!
+    </audio>
+    <p><small>(Si no tens l'arxiu "audio/present-simple-examples.mp3", això no sonarà. Hauràs de crear-lo i pujar-lo!)</small></p>
+
+    <h3>🎬 Un Vídeo Val Més Que Mil Paraules (o gairebé)</h3>
+    <p>Una petita explicació en vídeo, perquè vegis que no t'enganyo.</p>
+    <!-- Pots pujar un mp4 al teu repositori a una carpeta 'video' -->
+    <video controls width="600">
+        <source src="video/explicacio-present-simple.mp4" type="video/mp4">
+        El teu navegador no suporta la reproducció de vídeos. Quina pena!
+    </video>
+    <p><small>(Igual que l'àudio, necessitaràs l'arxiu "video/explicacio-present-simple.mp4".)</small></p>
+    <p>O si prefereixes, pots incrustar un vídeo de YouTube/Vimeo amb un `iframe` (obtingut de la opció "Compartir > Insertar" de YouTube):</p>
+    <!-- <iframe width="560" height="315" src="URL_DEL_TEU_VIDEO_YOUTUBE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+    <h2>Exercici Interactiu: Arrossega i Construeix (Drag & Drop - Nivell Futur!)</h2>
+    <p>Això és una mica més avançat i necessitarà JavaScript, però així t'ho imagines:</p>
+    <div class="exercise">
+        <p><strong>Instruccions:</strong> Arrossega les paraules per formar la frase correcta.</p>
+        <p>Frase a construir: <em>Ella llegeix llibres.</em></p>
+        <div class="drag-container">
+            <div class="dropzone" id="dz1"></div>
+            <div class="dropzone" id="dz2"></div>
+            <div class="dropzone" id="dz3"></div>
+        </div>
+        <div style="text-align: center; margin-top:10px;">
+            <span class="draggable" draggable="true" id="word1">She</span>
+            <span class="draggable" draggable="true" id="word2">books</span>
+            <span class="draggable" draggable="true" id="word3">reads</span>
+        </div>
+        <button class="btn" style="margin-top:15px;" onclick="alert('Això encara no funciona, però aviat ho farà! 😉')">Comprova!</button>
+    </div>
+    
+    <p class="humor">Continuarà... si sobrevius a aquesta primera lliçó! 💪</p>
+
+    <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #a259e6;">
+    <p style="text-align:center;">
+        <a href="#" class="btn">Lliçó Següent (Aviat!)</a>
+    </p>
+
   </div>
-</body>
-</html>
-</head>
-<body>
-  <h1>Benvinguts al curs d'anglès!</h1>
-  <p>Aquí trobaràs lliçons, àudios i activitats interactives.</p>
 </body>
 </html>
